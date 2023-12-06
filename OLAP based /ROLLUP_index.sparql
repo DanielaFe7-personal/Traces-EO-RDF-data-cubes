@@ -1,0 +1,19 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX traces-qb: <http://purl.org/net/traces/dataset/qb/>
+PREFIX traces-geo: <http://purl.org/net/traces/dataset/geo/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX traces-codelist: <http://purl.org/net/traces/codelist>
+SELECT ?broaderIndexConcept (AVG(?dataQuality) AS ?avgDataQuality) 
+WHERE {
+  ?obs rdf:type qb:Observation ;
+       qb:dataSet traces-qb:Mini-LIS-dataset ;
+       traces-qb:dimensionArea ?area ;
+       traces-qb:dimensionTime ?time ;
+       traces-qb:dimensionIndice ?index ;
+       traces-qb:measureDataQualityPct ?dataQuality .
+
+  ?index skos:broader ?broaderIndexConcept  .
+}
+GROUP BY ?broaderIndexConcept
+

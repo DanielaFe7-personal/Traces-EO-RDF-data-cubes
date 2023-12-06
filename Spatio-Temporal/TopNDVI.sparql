@@ -1,0 +1,43 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX traces-qb: <http://purl.org/net/traces/dataset/qb/>
+PREFIX traces-geo: <http://purl.org/net/traces/dataset/geo/>
+PREFIX traces-codelist: <http://purl.org/net/traces/codelist/>
+PREFIX traces-time: <http://purl.org/net/traces/dataset/time/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX sett: <http://purl.org/net/sett#>
+PREFIX tsn: <http://purl.org/net/tsn#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+PREFIX geo: <http://www.opengis.net/ont/geosparql#>
+PREFIX ch: <https://geo.ld.admin.ch/def/>
+SELECT ?name ?code ?mean ?geometry ?bounderies 
+WHERE {
+  ?obs rdf:type qb:Observation ;
+       traces-qb:dimensionArea  ?area ;
+       traces-qb:dimensionTime  ?time ;
+       traces-qb:dimensionIndice traces-codelist:NDVI ;
+       traces-qb:measureMeanUnitless ?mean ;
+       traces-qb:measureDataQualityPct ?quality .
+  ?area sett:studyArea traces-geo:Fribourg ;
+  		tsn:hasName ?name ;
+    	tsn:hasIdentifier ?code ;
+        owl:sameAs ?bounderies .# bounderies in 2022
+  ?time time:year  "2008"^^xsd:gYear ;
+        sett:seasonOfYear sett:Spring .
+
+FILTER (?quality > 0.7)
+    
+  SERVICE <https://geo.ld.admin.ch/query>
+  { 
+  	#?code ch:bfsNumber 2272 .
+    ?bounderies geo:hasGeometry ?coordinates .
+    ?coordinates geo:asWKT ?geometry .
+
+  } 
+      
+}
+ORDER BY DESC(?mean)
+LIMIT 3

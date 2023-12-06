@@ -1,0 +1,28 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX qb: <http://purl.org/linked-data/cube#>
+PREFIX traces-qb: <http://purl.org/net/traces/dataset/qb/>
+PREFIX traces-geo: <http://purl.org/net/traces/dataset/geo/>
+PREFIX traces-codelist: <http://purl.org/net/traces/codelist/>
+PREFIX traces-time: <http://purl.org/net/traces/dataset/time/>
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX time: <http://www.w3.org/2006/time#>
+PREFIX sett: <http://purl.org/net/sett#>
+SELECT ?obs ?mean ?year ?season 
+WHERE {
+  ?obs rdf:type qb:Observation ;
+       qb:dataSet traces-qb:Seasonaly-LIS-dataset ;
+       traces-qb:dimensionArea traces-geo:FR74013 ;  # Specify the value for the Area dimension
+       traces-qb:dimensionIndice traces-codelist:NDGlaI ;  # Specify the value for the Indice dimension
+       traces-qb:dimensionTime ?time ;  # Specify the value for the Time dimension
+       
+       traces-qb:measureDataQualityPct ?dataQuality ;
+       traces-qb:measureStdUnitless ?std ;
+       traces-qb:measureMeanUnitless ?mean .
+    
+   ?time time:year ?year .
+   ?time sett:seasonOfYear ?season  .
+   FILTER(?year >= "1990"^^xsd:gYear && ?year < "2000"^^xsd:gYear)
+}
+
+order by ?year
