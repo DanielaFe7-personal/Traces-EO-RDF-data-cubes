@@ -1,11 +1,11 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- given-names: "Daniela Fernanda"
-family-names: "Milon-Flores"
+- family-names: "Milon-Flores"
+given-names: "Daniela Fernanda"
 email: "dmilonflores@gmail.com"
-- given-names: "Camille" 
-family-names: "Bernard"
+- family-names: "Bernard" 
+given-names: "Camille" 
 email: "camille.bernard@univ-grenoble-alpes.fr"
 
 title: "My Research Software"
