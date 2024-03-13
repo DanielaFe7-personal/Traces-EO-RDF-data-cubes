@@ -3,10 +3,8 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Milon-Flores"
 given-names: "Daniela Fernanda"
-email: "dmilonflores@gmail.com"
 - family-names: "Bernard" 
 given-names: "Camille" 
-email: "camille.bernard@univ-grenoble-alpes.fr"
 
 title: "My Research Software"
 
