@@ -5,6 +5,7 @@ PREFIX traces-qb: <http://purl.org/net/traces/dataset/qb/>
 select ?property ?metadata {
     ?dataSet a qb:DataSet .
     ?dataSet ?property ?metadata .
-    FILTER (?dataSet = traces-qb:Mini-CLC-dataset)
+    FILTER (?dataSet = traces-qb:CLC-dataset) # Replace CLC by Seasonaly-LIS or Seasonaly-LST
 }
+
 

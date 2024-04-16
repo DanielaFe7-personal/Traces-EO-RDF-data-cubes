@@ -1,3 +1,5 @@
+# We recommned using GeoChange to recover the bounderies
+
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX traces-geo: <http://purl.org/net/traces/dataset/geo/>
 PREFIX sett: <http://purl.org/net/sett#>
