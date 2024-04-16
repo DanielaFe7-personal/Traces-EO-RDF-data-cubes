@@ -1,0 +1,460 @@
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix traces-codelist: <http://purl.org/net/traces/codelist/> .
+
+traces-codelist:AWEIsh a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1016/j.rse.2013.08.029" ;
+    dct:description """Automated Water Extraction Index (AWEI) is dedicated to improve classification accuracy in areas that include shadow and dark surfaces that other classification methods often fail to classify correctly. AWEIsh is primarily formulated for further improvement of accuracy
+by removing shadow pixels. Formula: B + 2.5 * G - 1.5 * (N + S1) - 0.25 * S2 ; Bands: ["B","G","N","S1","S2"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"""@en ;
+    rdfs:comment "The AWEIsh index belongs to the Water application domain. AWEIsh belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/094c1f0f-e9d3-4ac6-96ed-e01dd4736d39> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "AWEIsh"@en ;
+    skos:prefLabel "Automated Water Extraction Index with Shadows Elimination"@en .
+
+traces-codelist:EBBI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.3390/rs4102957" ;
+    dct:description "Enhanced Built-Up and Bareness Index (EBBI) combines near infrared (NIR), short wave infrared (SWIR), and thermal infrared (TIR) channels simultaneously to distinguish built-up and bare land areas. The EBBI was more effective at discriminating built-up and bare land areas and at increasing the accuracy of the built-up density percentage than five other indices. Formula: (S1 - N) / (10.0 * ((S1 + T1) ** 0.5)) ; Bands: [\"N\",\"S1\",\"T1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The EBBI index belongs to the Urban application domain. EBBI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Urban ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/f5b9ca9b-b651-4711-ad9f-a48b5ca38609> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "EBBI"@en ;
+    skos:prefLabel "Enhanced Built-Up and Bareness Index"@en .
+
+traces-codelist:LSWI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1016/j.rse.2003.11.008" ;
+    dct:description """Land Surface Water Index (LSWI) is similar in mathematic formulation to the Normalized Difference Water
+Index (NDWI) and is generally used to differentiate cropland and forests. Formula: (N - S1)/(N + S1) ; Bands: ["N","S1"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"""@en ;
+    rdfs:comment "The LSWI index belongs to the Water application domain. LSWI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/181bfc0b-a1c2-4121-aa9a-0b1f369dc9c5> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "LSWI"@en ;
+    skos:prefLabel "Land Surface Water Index"@en .
+
+traces-codelist:MBI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.3390/land10030231" ;
+    dct:description "Modified Bare Soil Index (MBI) combines shortwave infrared and near-infrared wavelengths. Bare soil extracted from the MBI achieved higher overall accuracy of about 98% and a kappa coefficient over 0.96, compared to bare soil index (BSI), normalized different bare soil index (NDBaI), and dry bare soil index (DBSI). The results also revealed that MBI considerably contributes to the accuracy of land cover classification. Formula: ((S1 - S2 - N)/(S1 + S2 + N)) + 0.5 ; Bands: [\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The MBI index belongs to the Urban application domain. MBI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Urban ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/71a5cdab-84b7-4ecc-adf1-d95121eacb3d> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "MBI"@en ;
+    skos:prefLabel "Modified Bare Soil Index"@en .
+
+traces-codelist:MSAVI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1016/0034-4257(94)90134-1" ;
+    dct:description "Modified Soil-Adjusted Vegetation Index (MSAVI) is adjusted to soil effects and is sensitive to early vegetation in the field, it works even when the earth is hardly covered with crops. MSAVI is useful at the very beginning of crop production season – when seedlings start to establish. Formula: 0.5 * (2.0 * N + 1 - (((2 * N + 1) ** 2) - 8 * (N - R)) ** 0.5) ; Bands: [\"R\",\"N\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The MSAVI index belongs to the Vegetation application domain. MSAVI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Vegetation ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/920fbc3f-4e70-492f-8d22-9efbcb0e7cc8> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "MSAVI"@en ;
+    skos:prefLabel "Modified Soil-Adjusted Vegetation Index"@en .
+
+traces-codelist:NBSIMS a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.3390/rs13142777" ;
+    dct:description "Non-Binary Snow Index for Multi-Component Surfaces (NBSIMS) is proposed to map snow/ice cover, it is based on the spectral characteristics of different Land Cover Types (LCTs), such as snow, water, vegetation, bare land, impervious, and shadow surfaces. This index can increase the separability between NBSIMS values corresponding to snow from other LCTs and accurately delineate the snow/ice cover in non-binary maps. The NBSIMS performance was compared against the well-known Normalized Difference Snow Index (NDSI), NDSII-1, S3, and Snow Water Index (SWI) methods and evaluated based on Ground Reference Test Pixels (GRTPs) over non-binarized results. The results show that the NBSIMS achieved an overall accuracy (OA) ranging from 0.99 to 1 with kappa coefficient values in the same range as the OA. The precision assessment confirmed the performance superiority of the proposed NBSIMS method for removing water and shadow surfaces over the compared relevant indices. Formula: 0.36 * (G + R + N) - (((B + S2)/G) + S1) ; Bands: [\"B\",\"G\",\"R\",\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NBSIMS index belongs to the Snow application domain. NBSIMS belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Snow ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/0d5cf26b-15eb-40dd-b1c5-9b104ad84169> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NBSIMS"@en ;
+    skos:prefLabel "Non-Binary Snow Index for Multi-Component Surfaces"@en .
+
+traces-codelist:NDBI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1080/01431160304987" ;
+    dct:description "Normalized Difference Built-up Index (NDBI) was conveived automate the process of mapping  built-up areas. It takes advantage of  the unique spectralresponse of built-up areas and other land covers. Built-up areas are effectively mapped  through  arithmetic  manipulation  of  re-coded  Normalized  Difference Vegetation Index (NDVI). Formula: (S1 - N) / (S1 + N) ; Bands: [\"N\",\"S1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDBI index belongs to the Urban application domain. NDBI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Urban ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/25159cf0-a4b5-4060-bee6-d4739a018593> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDBI"@en ;
+    skos:prefLabel "Normalized Difference Built-Up Index"@en .
+
+traces-codelist:NDGlaI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1080/01431160802385459" ;
+    dct:description "Normalized Difference Glacier Index (NDGI(al)) is generally used in combination with NDSI and NDSII to dicriminate snow, ice and ice-mixed-debris in a systematic manner. Formula: (G - R)/(G + R) ; Bands: [\"G\",\"R\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDGlaI index belongs to the Snow application domain. NDGlaI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Snow ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/5a7ae9e2-968a-44e9-bf22-58d4c557885b> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDGlaI"@en ;
+    skos:prefLabel "Normalized Difference Glacier Index"@en .
+
+traces-codelist:NDISIb a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.14358/PERS.76.5.557" ;
+    dct:description "Normalized Difference Impervious Surface Index (NDISI) purpose is to map impervious surfaces. The trailing b (making NDISIb), was added by https://github.com/awesome-spectral-indices/awesome-spectral-indices who also contains a NDISIg indice where green replace blue. Formula: (T1 - (B + N + S1) / 3.0)/(T1 + (B + N + S1) / 3.0) ; Bands: [\"B\",\"N\",\"S1\",\"T1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDISIb index belongs to the Urban application domain. NDISIb belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Urban ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/b37d9657-a848-4c37-b152-3bc0f1be827b> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDISIb"@en ;
+    skos:prefLabel "Normalized Difference Impervious Surface Index Blue"@en .
+
+traces-codelist:NDSI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1109/IGARSS.1994.399618" ;
+    dct:description "NDSI is widely employed in environmental studies, climate research, and water resource management to assess snow extent and changes over for its ability  to differentiate between snow and clouds. Formula: (G - S1) / (G + S1) ; Bands: [\"G\",\"S1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDSI index belongs to the Snow application domain. NDSI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Snow ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/053903c2-bb0b-40d6-af14-ebc4c9f43465> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDSI"@en ;
+    skos:prefLabel "Normalized Difference Snow Index"@en .
+
+traces-codelist:NDVI a skos:Concept ;
+    dct:bibliographicCitation "https://ntrs.nasa.gov/citations/19740022614" ;
+    dct:description "Normalized Difference Vegetation Index (NDVI) is the most common vegetation index in remote sensing. It can be used throughout the whole crop production season except when vegetation cover is too scarce, so its spectral reflectance is too low. NDVI values are the most accurate in the middle of the season at the stage of active crop growt. Formula: (N - R)/(N + R) ; Bands: [\"R\",\"N\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDVI index belongs to the Vegetation application domain. NDVI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    owl:sameAs <https://dbpedia.org/page/Normalized_difference_vegetation_index>,
+        <https://www.wikidata.org/wiki/Q718775> ;
+    skos:broader traces-codelist:Vegetation ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/eb9f6531-2609-4075-ba0b-35caab432ef0> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDVI"@en ;
+    skos:prefLabel "Normalized Difference Vegetation Index"@en .
+
+traces-codelist:NDWI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1080/01431169608948714" ;
+    dct:description "Normalized Difference Water Index (NDWI) was elaborated to outline open water bodies and assess their turbidity using the same principe as Normalized Difference Vegetation index. Formula: (G - N) / (G + N) ; Bands: [\"G\",\"N\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NDWI index belongs to the Water application domain. NDWI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    owl:sameAs <https://dbpedia.org/page/Normalized_difference_water_index>,
+        <https://www.wikidata.org/wiki/Q22907353> ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/b2be217d-42b3-49cb-a03b-212b26b99972> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NDWI"@en ;
+    skos:prefLabel "Normalized Difference Water Index"@en .
+
+traces-codelist:NWI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.11873/j.issn.1004-0323.2009.2.167" ;
+    dct:description "New Water Index (NWI) distinguishes itself from other conventional water indexes by its usage of SWIR2  which has rarely been reported in the literature at the time of it's creation. Formula: (B - (N + S1 + S2))/(B + (N + S1 + S2)) ; Bands: [\"B\",\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The NWI index belongs to the Water application domain. NWI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/ef13f02f-b7ca-4000-b52d-4df68af6c7eb> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "NWI"@en ;
+    skos:prefLabel "New Water Index"@en .
+
+traces-codelist:SWI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.3390/rs11232774" ;
+    dct:description "Snow Water Index (SWI) uses spectral characteristics of the visible, SWIR and NIR bands to achieve significant contrast between snow/ice pixels and other pixels including water bodies to complete the militation of other snow index such as  NDSI, S3, and NDSII. Formula: (N - S1)/(N + S1) ; Bands: [\"G\",\"N\",\"S1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The SWI index belongs to the Snow application domain. SWI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Snow ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/9880ac46-0667-4e4d-85a7-6e6c38d3eda5> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "SWI"@en ;
+    skos:prefLabel "Snow Water Index"@en .
+
+traces-codelist:TCB a skos:Concept ;
+    dct:bibliographicCitation "http://dx.doi.org/10.1109/TGRS.1984.350619" ;
+    dct:description "Tasseled Cap Brightness (TCB) is the product of a Tasseled Cap Transformation (TCT). Consisting in the convertion of multispectral data acquired from satellite or aerial platforms into a set of orthogonal components representing different aspects of land cover and land surface characteristics. TCB being a proxy of urbanisation. Formula: 0.2043 * B + 0.4158 * G + 0.5524 * R + 0.5741 * N + 0.3124 * S1 + 0.2303 * S2 ; Bands: [\"B\",\"G\",\"R\",\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The TCB index belongs to the Urban application domain. TCB belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Urban ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/a07ce074-966e-47f9-bde1-94af611fea92> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "TCB"@en ;
+    skos:prefLabel "Tasseled Cap Brigthness"@en .
+
+traces-codelist:TCG a skos:Concept ;
+    dct:bibliographicCitation "http://dx.doi.org/10.1109/TGRS.1984.350619" ;
+    dct:description "Tasseled Cap Greeness (TCG) is the product of a Tasseled Cap Transformation (TCT). Consisting in the convertion of multispectral data acquired from satellite or aerial platforms into a set of orthogonal components representing different aspects of land cover and land surface characteristics. TCG being a proxy of vegetation. Formula: -0.1603 * B + 0.2819 * G - 0.4934 * R + 0.7940 * N - 0.0002 * S1 - 0.1446 * S2 ; Bands: [\"B\",\"G\",\"R\",\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The TCG index belongs to the Vegetation application domain. TCG belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Vegetation ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/a07ce074-966e-47f9-bde1-94af611fea92> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "TCG"@en ;
+    skos:prefLabel "Tasseled Cap Greenness"@en .
+
+traces-codelist:TCW a skos:Concept ;
+    dct:bibliographicCitation "http://dx.doi.org/10.1109/TGRS.1984.350619" ;
+    dct:description "Tasseled Cap Brightness (TCW) is the product of a Tasseled Cap Transformation (TCT). Consisting in the convertion of multispectral data acquired from satellite or aerial platforms into a set of orthogonal components representing different aspects of land cover and land surface characteristics. TCW being a proxy of water. Formula: 0.0315 * B + 0.2021 * G + 0.3102 * R + 0.1594 * N - 0.6806 * S1 -0.6109 * S2 ; Bands: [\"B\",\"G\",\"R\",\"N\",\"S1\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The TCW index belongs to the Water application domain. TCW belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/90ffe5f7-f0ac-40b8-a906-4a58f985a2ef> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "TCW"@en ;
+    skos:prefLabel "Tasseled Cap Wetness"@en .
+
+traces-codelist:TI-pop a skos:Concept ;
+    rdfs:label "Population Traces Indices (TI-pop) list."@en ;
+    rdfs:comment "Population Traces Indices (TI-pop) list brings together a set of population indices proposed by the Traces Project team. TI-pop is part of the Traces Indices (TI) code list."@en ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "TI-pop"@en ;
+    skos:note "Population Traces Indices (TI-pop) list."@en ;
+    skos:prefLabel "Population Traces Indices (TI-pop) list."@en .
+
+traces-codelist:VARI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1016/S0034-4257(01)00289-9" ;
+    dct:description "Visible Atmospherically Resistant Index (VARI), is a variation of Atmospherically Resistant Vegetation Index (ARVI) aiming to minimize sensitivity to atmospheric effects, enhancing vegetation under strong atmospheric impact while smoothing illumination variations. Formula: (G - R) / (G + R - B) ; Bands: [\"B\",\"G\",\"R\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The VARI index belongs to the Vegetation application domain. VARI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Vegetation ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/2fa28c94-a010-4a72-b16c-f81c50bffca3> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "VARI"@en ;
+    skos:prefLabel "Visible Atmospherically Resistant Index"@en .
+
+traces-codelist:WI2 a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.3390/rs11182186" ;
+    dct:description "Water Index 2 (WI2) is dedicated to detect the coastline from different multispectral Landsat images, using the same principe as Normalized Difference Vegetation index. Formula: (B - S2) / (B + S2) ; Bands: [\"B\",\"S2\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The WI2 index belongs to the Water application domain. WI2 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/08daa698-f9e3-4b13-afd3-c6a399e63516> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "WI2"@en ;
+    skos:prefLabel "Water Index 2"@en .
+
+traces-codelist:WRI a skos:Concept ;
+    dct:bibliographicCitation "https://doi.org/10.1109/GEOINFORMATICS.2010.5567762" ;
+    dct:description "Scientific literature is parse for Water Ratio Index (WRI), but this index was due to it's original band combination. Formula: (G + R)/(N + S1) ; Bands: [\"G\",\"R\",\"N\",\"S1\"] ; Bands Description: Blue: {Standard = B ; Landsat-89 = B2 ; Landsat-457 = B1} Green: {Standard = G ; Landsat-89 = B3 ; Landsat-457 = B2} Red: {Standard = R ; Landsat-89 = B4 ; Landsat-457 = B3} NIR: {Standard = N ; Landsat-89 = B5 ; Landsat-457 = B4} SWIR {1: Standard = S1 ; Landsat-89 = B6 ; Landsat-457 = B5} SWIR 2: {Standard = S2 ; Landsat-89 = B7 ; Landsat-457 = B7} Thermal 1: {Standard = T1 ; Landsat-89 = B10 ; Landsat-457 = B6}"@en ;
+    rdfs:comment "The WRI index belongs to the Water application domain. WRI belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Water ;
+    skos:exactmatch <https://traces-gn.unepgrid.ch/geonetwork/srv/fre/catalog.search#/metadata/6c344327-a562-472a-89b8-9df969f4319c> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "WRI"@en ;
+    skos:prefLabel "Water Ratio Index"@en .
+
+traces-codelist:clc_11 a skos:Concept ;
+    rdfs:comment "The CLC11 index belongs to the Land Cover application domain. CLC11 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc11> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC11"@en ;
+    skos:prefLabel "Zones urbanisées"@fr .
+
+traces-codelist:clc_12 a skos:Concept ;
+    rdfs:comment "The CLC12 index belongs to the Land Cover application domain. CLC12 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc12> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC12"@en ;
+    skos:prefLabel "Zones industrielles ou commerciales et réseaux de communication"@fr .
+
+traces-codelist:clc_13 a skos:Concept ;
+    rdfs:comment "The CLC13 index belongs to the Land Cover application domain. CLC13 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc13> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC13"@en ;
+    skos:prefLabel "Mines décharges et chantiers"@fr .
+
+traces-codelist:clc_14 a skos:Concept ;
+    rdfs:comment "The CLC14 index belongs to the Land Cover application domain. CLC14 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc14> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC14"@en ;
+    skos:prefLabel "Espaces verts artificialisés non agricoles"@fr .
+
+traces-codelist:clc_21 a skos:Concept ;
+    rdfs:comment "The CLC21 index belongs to the Land Cover application domain. CLC21 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc21> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC21"@en ;
+    skos:prefLabel "Terres arables"@fr .
+
+traces-codelist:clc_22 a skos:Concept ;
+    rdfs:comment "The CLC22 index belongs to the Land Cover application domain. CLC22 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc22> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC22"@en ;
+    skos:prefLabel "Cultures permanentes"@fr .
+
+traces-codelist:clc_23 a skos:Concept ;
+    rdfs:comment "The CLC23 index belongs to the Land Cover application domain. CLC23 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc23> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC23"@en ;
+    skos:prefLabel "Prairies"@fr .
+
+traces-codelist:clc_24 a skos:Concept ;
+    rdfs:comment "The CLC24 index belongs to the Land Cover application domain. CLC24 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc24> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC24"@en ;
+    skos:prefLabel "Zones agricoles hétérogènes"@fr .
+
+traces-codelist:clc_31 a skos:Concept ;
+    rdfs:comment "The CLC31 index belongs to the Land Cover application domain. CLC31 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc31> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC31"@en ;
+    skos:prefLabel "Forêts"@fr .
+
+traces-codelist:clc_32 a skos:Concept ;
+    rdfs:comment "The CLC32 index belongs to the Land Cover application domain. CLC32 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc32> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC32"@en ;
+    skos:prefLabel "Milieux à végétation arbustive et/ou herbacée"@fr .
+
+traces-codelist:clc_33 a skos:Concept ;
+    rdfs:comment "The CLC33 index belongs to the Land Cover application domain. CLC33 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc33> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC33"@en ;
+    skos:prefLabel "Espaces ouverts sans ou avec peu de végétation"@fr .
+
+traces-codelist:clc_41 a skos:Concept ;
+    rdfs:comment "The CLC41 index belongs to the Land Cover application domain. CLC41 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc41> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC41"@en ;
+    skos:prefLabel "Zones humides intérieures"@fr .
+
+traces-codelist:clc_42 a skos:Concept ;
+    rdfs:comment "The CLC42 index belongs to the Land Cover application domain. CLC42 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc42> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC42"@en ;
+    skos:prefLabel "Zones humides côtières"@fr .
+
+traces-codelist:clc_51 a skos:Concept ;
+    rdfs:comment "The CLC51 index belongs to the Land Cover application domain. CLC51 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc51> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC51"@en ;
+    skos:prefLabel "Eaux continentales"@fr .
+
+traces-codelist:clc_52 a skos:Concept ;
+    rdfs:comment "The CLC52 index belongs to the Land Cover application domain. CLC52 belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:LandCover ;
+    skos:exactmatch <http://www.w3.org/2015/03/corine#clc52> ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "CLC52"@en ;
+    skos:prefLabel "Eaux maritimes"@fr .
+
+traces-codelist:st a skos:Concept ;
+    rdfs:comment "The ST index belongs to the Temperature application domain. ST belongs to the Environmental Traces Indices (TI-env) list proposed by the Traces project team."@en ;
+    skos:broader traces-codelist:Temperature ;
+    skos:inScheme traces-codelist:TI ;
+    skos:notation "ST"@en ;
+    skos:prefLabel "Surface Temperature"@fr .
+
+traces-codelist:Temperature a skos:Concept ;
+    rdfs:label "Temperature application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:st ;
+    skos:notation "Temperature"@en ;
+    skos:note "Temperature application domain"@en ;
+    skos:prefLabel "Temperature application domain"@en .
+
+traces-codelist:Snow a skos:Concept ;
+    rdfs:label "Snow application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:NBSIMS,
+        traces-codelist:NDGlaI,
+        traces-codelist:NDSI,
+        traces-codelist:SWI ;
+    skos:notation "Snow"@en ;
+    skos:note "Snow application domain"@en ;
+    skos:prefLabel "Snow application domain"@en .
+
+traces-codelist:Vegetation a skos:Concept ;
+    rdfs:label "Vegetation application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:MSAVI,
+        traces-codelist:NDVI,
+        traces-codelist:TCG,
+        traces-codelist:VARI ;
+    skos:notation "Vegetation"@en ;
+    skos:note "Vegetation application domain"@en ;
+    skos:prefLabel "Vegetation application domain"@en .
+
+traces-codelist:Urban a skos:Concept ;
+    rdfs:label "Urban application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:EBBI,
+        traces-codelist:MBI,
+        traces-codelist:NDBI,
+        traces-codelist:NDISIb,
+        traces-codelist:TCB ;
+    skos:notation "Urban"@en ;
+    skos:note "Urban application domain"@en ;
+    skos:prefLabel "Urban application domain"@en .
+
+traces-codelist:TI-env a skos:Concept ;
+    rdfs:label "Environmental Traces Indices (TI-env) list."@en ;
+    rdfs:comment "Environmental Traces Indices (TI-env) list  brings together a set of environmental indices proposed by the Traces Project team. All the TI-env indices were calculated using the Swiss Data Cube (SDC). TI-env is part of the Traces Indices (TI) code list."@en ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:LandCover,
+        traces-codelist:Snow,
+        traces-codelist:Temperature,
+        traces-codelist:Urban,
+        traces-codelist:Vegetation,
+        traces-codelist:Water ;
+    skos:notation "TI-env"@en ;
+    skos:note "Environmental Traces Indices (TI-env) list."@en ;
+    skos:prefLabel "Environmental Traces Indices (TI-env) list."@en .
+
+traces-codelist:Water a skos:Concept ;
+    rdfs:label "Water application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:AWEIsh,
+        traces-codelist:LSWI,
+        traces-codelist:NDWI,
+        traces-codelist:NWI,
+        traces-codelist:TCW,
+        traces-codelist:WI2,
+        traces-codelist:WRI ;
+    skos:notation "Water"@en ;
+    skos:note "Water application domain"@en ;
+    skos:prefLabel "Water application domain"@en .
+
+traces-codelist:LandCover a skos:Concept ;
+    rdfs:label "landCover application domain."@en ;
+    rdfs:comment "Application domain of the Environmental Traces Indices (TI-env) list."@en ;
+    skos:broader traces-codelist:TI-env ;
+    skos:inScheme traces-codelist:TI ;
+    skos:narrower traces-codelist:clc_11,
+        traces-codelist:clc_12,
+        traces-codelist:clc_13,
+        traces-codelist:clc_14,
+        traces-codelist:clc_21,
+        traces-codelist:clc_22,
+        traces-codelist:clc_23,
+        traces-codelist:clc_24,
+        traces-codelist:clc_31,
+        traces-codelist:clc_32,
+        traces-codelist:clc_33,
+        traces-codelist:clc_41,
+        traces-codelist:clc_42,
+        traces-codelist:clc_51,
+        traces-codelist:clc_52 ;
+    skos:notation "landCover"@en ;
+    skos:note "landCover application domain"@en ;
+    skos:prefLabel "landCover application domain"@en .
+
+traces-codelist:TI a skos:ConceptScheme ;
+    rdfs:label "Traces Indices (TI) code list."@en ;
+    rdfs:comment "Traces Indices (TI) brings together a set of indices proposed by the Traces Project team. The indices are: Environmental, Population, etc."@en ;
+    skos:hasTopConcept traces-codelist:TI-env,
+        traces-codelist:TI-pop ;
+    skos:notation "TI-CL"@en ;
+    skos:note "Traces Indices (TI) code list."@en ;
+    skos:prefLabel "Traces Indices (TI) code list."@en .
+

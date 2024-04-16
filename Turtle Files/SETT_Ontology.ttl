@@ -1,0 +1,168 @@
+@prefix greg: <http://www.w3.org/ns/time/gregorian> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sett: <http://purl.org/net/sett#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix tsn: <http://purl.org/net/tsn#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+sett:Country a rdfs:Class ;
+    rdfs:label "Country"@en ;
+    rdfs:comment "Country to which the Territorial Unit belongs."@en ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    skos:definition "Country to which the Territorial Unit belongs."@en ;
+    skos:prefLabel "Country"@en .
+
+sett:DateTimeDescription a rdfs:Class ;
+    rdfs:label "SETT Date Time Description"@en ;
+    rdfs:comment "The SETT's DateTimeDescription class extends the DateTimeDescription class of the W3C Time ontology by adding the concept of Weather seasons, i.e. Spring, Fall, Summer and Winter."@en ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:subClassOf time:DateTimeDescription ;
+    skos:definition "The SETTDateTimeDescription class extends the DateTimeDescription class of the W3C Time ontology by adding the concept of Weather seasons, i.e. Spring, Fall, Summer and Winter."@en ;
+    skos:prefLabel "SETT-DTD"@en .
+
+sett:StudyArea a rdfs:Class ;
+    rdfs:label "Study Area"@en ;
+    rdfs:comment "The Study Area represents the geographical space in which the Territorial Unit is located to be studied."@en ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:subClassOf tsn:TerritorialUnit ;
+    skos:definition "The Study Area represents the geographical space in which the Territorial Unit is located to be studied."@en ;
+    skos:prefLabel "Study Area"@en .
+
+sett:TerritorialUnit a rdfs:Class ;
+    rdfs:label "Territorial Unit"@en ;
+    rdfs:comment "The Territorial Unit concept describes a piece of a geographical space at a specific time instant or period, that belongs to a geographical division."@en ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:subClassOf tsn:UnitVersion ;
+    skos:definition "The Territorial Unit concept describes a piece of a geographical space at a specific time instant or period, that belongs to a geographical division."@en ;
+    skos:prefLabel "Territorial Unit"@en .
+
+sett:Autumn a time:Interval ;
+    rdfs:label "Autumn season."@en ;
+    rdfs:comment "Weather season that represents Autumn during the year. The SETT Autumn concept defined here belongs to the Meteorological season in the Northern Hemisphere (NH), i.e., Autumn comprises the months of September, October, and November."@en ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q1314> ;
+    time:hasBeginning greg:September ;
+    time:hasEnd greg:November .
+
+sett:Spring a time:Interval ;
+    rdfs:label "Spring season."@en ;
+    rdfs:comment "Weather season that represents Spring during the year. The SETT Spring concept defined here belongs to the Meteorological season in the Northern Hemisphere (NH), i.e., Spring comprises the months of March, April, and May."@en ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q1312> ;
+    time:hasBeginning greg:March ;
+    time:hasEnd greg:May .
+
+sett:Summer a time:Interval ;
+    rdfs:label "Summer season."@en ;
+    rdfs:comment "Weather season that represents Summer during the year. The SETT Summer concept defined here belongs to the Meteorological season in the Northern Hemisphere (NH), i.e., Summer comprises the months of June, July, and August."@en ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q1313> ;
+    time:hasBeginning greg:June ;
+    time:hasEnd greg:August .
+
+sett:Winter a time:Interval ;
+    rdfs:label "Winter season."@en ;
+    rdfs:comment "Weather season that represents Winter during the year. The SETT Winter concept defined here belongs to the Meteorological season in the Northern Hemisphere (NH), i.e., Winter comprises the months of December (of the previous year), January, and February."@en ;
+    owl:sameAs <https://www.wikidata.org/wiki/Q1311> ;
+    time:hasBeginning greg:December ;
+    time:hasEnd greg:February .
+
+sett:country a rdf:Property ;
+    rdfs:label "country"@en ;
+    rdfs:comment "The country where the Territorial Unit is located."@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range sett:Country ;
+    skos:definition "The country where the Territorial Unit is located."@en ;
+    skos:prefLabel "country"@en .
+
+sett:maxElevationMeters a rdf:Property ;
+    rdfs:label "has max Elevation"@en ;
+    rdfs:comment "Measure the Maximum elevation value (meters) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Measure the Maximum elevation value (meters) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    skos:prefLabel "has max Elevation"@en .
+
+sett:maxSlopeDegrees a rdf:Property ;
+    rdfs:label "has max Slope"@en ;
+    rdfs:comment "Measure the Maximum slope value (degrees) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Measure the Maximum slope value (degrees) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    skos:prefLabel "has max Slope"@en .
+
+sett:meanElevationMeters a rdf:Property ;
+    rdfs:label "has mean Elevation"@en ;
+    rdfs:comment "Based on the Elevation measure, the mean value (meters) for each Territorial Unit is calculated. "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Based on the Elevation measure, the mean value (meters) for each Territorial Unit is calculated. "@en ;
+    skos:prefLabel "has mean Elevation"@en .
+
+sett:meanSlopeDegrees a rdf:Property ;
+    rdfs:label "has mean Slope"@en ;
+    rdfs:comment "Based on the Slope, measure the mean value (meters) for each Territorial Unit is calculated. "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Based on the Slope, measure measure the mean value (meters) for each Territorial Unit is calculated. "@en ;
+    skos:prefLabel "has mean Slope"@en .
+
+sett:minElevationMeters a rdf:Property ;
+    rdfs:label "has minimum Elevation"@en ;
+    rdfs:comment "Measure the Minimum elevation value (meters) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Measure the Minimum elevation value (meters) in a Territorial Unit. Data available on Swiss Data Cube (SDC)."@en ;
+    skos:prefLabel "has minimum Elevation"@en .
+
+sett:minSlopeDegrees a rdf:Property ;
+    rdfs:label "has minimum Slope"@en ;
+    rdfs:comment "Measure the Minimum slope value (degrees) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Measure the Minimum slope value (degrees) in a Territorial Unit. Data available on Swiss Data Cube (SDC). "@en ;
+    skos:prefLabel "has minimum Slope"@en .
+
+sett:seasonOfYear a rdf:Property ;
+    rdfs:label "season Of Year"@en ;
+    rdfs:comment "Refers to the current Weather seasons, e.g., Winter, Spring, Summer, or Autumn."@en ;
+    rdfs:domain sett:DateTimeDescription ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range time:Interval ;
+    skos:definition "Refers to the current Weather seasons, e.g., Winter, Spring, Summer, or Autumn."@en ;
+    skos:prefLabel "season Of Year"@en .
+
+sett:stdElevationMeters a rdf:Property ;
+    rdfs:label "has std Elevation"@en ;
+    rdfs:comment "Based on the Elevation measure, the standard deviation value (meters) for each Territorial Unit is calculated. "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Based on the Elevation measure, the standard deviation value (meters) for each Territorial Unit is calculated. "@en ;
+    skos:prefLabel "has std Elevation"@en .
+
+sett:stdSlopeDegrees a rdf:Property ;
+    rdfs:label "has std Slope"@en ;
+    rdfs:comment "Based on the Slope measure, the standard deviation value (meters) for each Territorial Unit is calculated. "@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range xsd:float ;
+    skos:definition "Based on the Slope measure, the standard deviation value (meters) for each Territorial Unit is calculated. "@en ;
+    skos:prefLabel "has std Slope"@en .
+
+sett:studyArea a rdf:Property ;
+    rdfs:label "study Area"@en ;
+    rdfs:comment "Refers to the Study Area to which the Territorial Unit belongs."@en ;
+    rdfs:domain sett:TerritorialUnit ;
+    rdfs:isDefinedBy <http://purl.org/sett/> ;
+    rdfs:range tsn:TerritorialUnit ;
+    skos:definition "Refers to the Study Area to which the Territorial Unit belongs."@en ;
+    skos:prefLabel "study Area"@en .
+
