@@ -13,7 +13,7 @@ WHERE {
   ?obs rdf:type qb:Observation ;
        qb:dataSet traces-qb:Seasonaly-LIS-dataset ;  
        traces-qb:dimensionArea traces-geo:FR74013 ;
-       traces-qb:dimensionIndice <http://purl.org/net/traces/codelist/NDGlaI> ;
+       traces-qb:dimensionIndice traces-codelist:NDGlaI ;
        traces-qb:dimensionTime ?time ;
        traces-qb:measureDataQualityPct ?dataQuality .
     ?time time:month ?month 
